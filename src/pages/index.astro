@@ -1,23 +1,57 @@
 ---
-import Tour from '../components/Tour.astro';
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import BlogHeader from '../components/BlogHeader.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+import Hero from '../components/Hero.astro';
 
-let title = 'My New Astro Site!';
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Example Blog';
+let description = 'The perfect starter for your perfect blog.';
+let permalink = 'https://example.com/';
+
+// Data Fetching: List all Markdown posts in the repo.
+let allPosts = Astro.fetchContent('./posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
 ---
-
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{title}</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/style/main.min.css"><link rel="stylesheet" href="/style/home.css">
-</head>
-
-<body>
-  
-
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
     
-  
-</body>
+<style lang="scss">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+    
+    max-width: 1300px;
+    margin: 36px auto;
+    &.flex {
+      display: flex;
+    }
+  }
+  </style>
+  </head>
+
+  <body>
+    <Hero />
+    
+        <section>
+        <div class="container flex">
+        
+          {allPosts.map(p => <BlogPostPreview post={p} />)}
+        
+        </div>
+        </section>
+      
+    
+  </body>
 </html>

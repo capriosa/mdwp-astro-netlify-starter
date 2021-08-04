@@ -1,33 +1,51 @@
-# Astro + Netlify Starter
+# Astro Starter Kit: Blog
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9e561573-ed5f-4ef9-86d1-e098fa22429f/deploy-status)](https://app.netlify.com/sites/astro-netlify/deploys)
-
-This is an Astro (v0.17.2) starter project based on the [Astro Starter Kit](https://github.com/snowpackjs/astro/tree/main/examples/starter), with a `netlify.toml` configuration included, and an example React component + CSS Module.
-
-If you'd like to learn more about how Astro works, [here's an introductory blog post](https://dev.to/cassidoo/build-wicked-fast-sites-with-astro-an-introduction-173j)!
-
-## Clone and Deploy
-
-You can instantly clone this to your GitHub and deploy it by clicking this button here:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/astro-netlify-starter)
-
-Or, if you'd like to just use the CLI and not deploy just yet, you can use `create-astro` with this as a template:
-
-```bash
-npm init astro my-new-project --template cassidoo/astro-netlify-starter
+```
+npm init astro -- --template blog
 ```
 
-## Commands
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+Features:
+
+- ✅ SEO-friendly setup with canonical URLs and OpenGraph data
+- ✅ Full Markdown support
+- ✅ RSS 2.0 generation
+- ✅ Sitemap.xml generation
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+│   ├── robots.txt
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   └── Tour.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
 | Command         | Action                                      |
-| :-------------- | :------------------------------------------ |
+|:----------------|:--------------------------------------------|
 | `npm install`   | Installs dependencies                       |
-| `npm run start` | Starts local dev server at `localhost:3000` |
+| `npm start`     | Starts local dev server at `localhost:3000` |
 | `npm run build` | Build your production site to `./dist/`     |
 
-## Want to learn more?
+## 👀 Want to learn more?
 
-Feel free to check [the Astro documentation](https://github.com/snowpackjs/astro)!
+Feel free to check [our documentation](https://github.com/snowpackjs/astro) or jump into our [Discord server](https://astro.build/chat).
